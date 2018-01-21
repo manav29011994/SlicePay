@@ -115,8 +115,10 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                 gridApdapter.setOnBottomReachedListener(new OnBottomReachedListener() {
                     @Override
                     public void onBottomReached(int position) {
+                        if(pageNo<5) {     // for contolling to only 5 page as we have to disply only 30 items
                             pageNo = pageNo + 1;
                             getData();
+                        }
 
                     }
                 });
